@@ -1,0 +1,17 @@
+{
+	"name": "LS_ASQL_DB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sph-asql-server.database.windows.net",
+			"database": "sph-asql-db",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sachinph",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQENGMjczRDMxLTMxQTQtNDlGMi05MzUzLUNEOTRFQTM4MTQ1OF9mZTJjNzdiZC0wZWQ3LTQzN2ItOWM3Zi1hMTI3YzhmN2EzM2QiDQp9"
+		}
+	}
+}

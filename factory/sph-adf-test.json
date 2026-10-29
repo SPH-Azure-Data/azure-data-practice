@@ -1,0 +1,15 @@
+{
+	"name": "sph-adf-test",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bf8e8643-9c77-4327-86db-1e258f0d1206",
+		"tenantId": "33c0072a-1464-42f4-ab64-efa61fcb1987"
+	}
+}

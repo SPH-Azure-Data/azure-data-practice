@@ -1,0 +1,39 @@
+{
+	"name": "003ppl_EmailDemo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Send Email",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"url": "https://prod-04.centralus.logic.azure.com:443/workflows/a98cd87e55614511b2f0db1d399dc824/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=uvSsx3D12zWfaINdA2zrwqc5LMSXUU0SIBplK8SJaCU",
+					"body": {
+						"value": "{\"table_name\":\"@{pipeline().parameters.table_name}\"}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-10-28T16:54:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
