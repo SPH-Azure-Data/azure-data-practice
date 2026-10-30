@@ -1,0 +1,22 @@
+{
+	"name": "DS_ADLS_EmptyJSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "empty.json",
+				"folderPath": "monitor",
+				"fileSystem": "source-container"
+			}
+		},
+		"schema": {
+			"type": "object"
+		}
+	}
+}
