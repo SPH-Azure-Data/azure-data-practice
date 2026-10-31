@@ -5,11 +5,20 @@
 			"referenceName": "LS_ADLS",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"file": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file",
+					"type": "Expression"
+				},
 				"folderPath": "Years",
 				"fileSystem": "target-container"
 			},

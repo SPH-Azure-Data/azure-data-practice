@@ -92,6 +92,14 @@
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
+													"modifiedDatetimeStart": {
+														"value": "@subtractFromTime(utcNow(), 10, 'Minute')",
+														"type": "Expression"
+													},
+													"modifiedDatetimeEnd": {
+														"value": "@utcNow(utcNow())",
+														"type": "Expression"
+													},
 													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
@@ -99,11 +107,15 @@
 												}
 											},
 											"sink": {
-												"type": "AzureSqlSink",
-												"writeBehavior": "insert",
-												"sqlWriterUseTableLock": false,
-												"tableOption": "autoCreate",
-												"disableMetricsCollection": false
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
 											},
 											"enableStaging": false,
 											"translator": {
@@ -129,11 +141,11 @@
 										],
 										"outputs": [
 											{
-												"referenceName": "DS_ASQL_1",
+												"referenceName": "DS_ADLS_Target_Years",
 												"type": "DatasetReference",
 												"parameters": {
-													"table": {
-														"value": "@replace(item().name,'.csv','')",
+													"file": {
+														"value": "@item().name",
 														"type": "Expression"
 													}
 												}
