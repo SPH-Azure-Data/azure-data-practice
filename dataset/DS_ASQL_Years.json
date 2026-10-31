@@ -1,0 +1,16 @@
+{
+	"name": "DS_ASQL_Years",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Years"
+		}
+	}
+}
